@@ -17,9 +17,18 @@ function Dashboard(props) {
                 <h1>
                     Dashboard
                 </h1>
+                <h2>Hi, {userDetails.userDetails.name}</h2>
+                <h3>Account details</h3>
+                <ul>
+                    <li>
+                        <p>Email: {userDetails.userDetails.email}</p>
+                    </li>
+                    <li>
+                        <p>Age: {userDetails.userDetails.age}</p>
+                    </li>
+                </ul>
                 <button onClick={handleLogout}>Logout</button>
             </div>
-            <p>Welcome {userDetails.userDetails.email}</p>
         </section>
     )
 }

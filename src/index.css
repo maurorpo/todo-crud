@@ -68,9 +68,27 @@ label {
   text-align: center;
 }
 
+.headTable {
+  background-color: #ffffff75;
+}
+
+.headTable th {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 11px 10px;
+  text-align: left;
+}
+
 table {
-  border-radius: 10px;
-  padding: 10px;
-  background-color: #fff;
+  margin-top: 40px;
+  border: solid #ffffff52 1px;
+  border-top: none;
   width: 100%;
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 0;
+}
+
+table tbody td {
+  padding: 10px;
 }

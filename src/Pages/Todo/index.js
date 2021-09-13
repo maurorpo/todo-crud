@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import { GetTask } from '../../ContextTask';
+import EditIcon from '@material-ui/icons/Edit';
 
 const Todo = () => {
 
@@ -19,43 +20,45 @@ const Todo = () => {
         <Link to='/new-task' className='btnBasic'>New task</Link>
         <div className='btnBasic'>Remove selected</div>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Check</th>
-            <th>Description</th>
-            <th>Completed</th>
-            <th>Created at</th>
-            <th>Update at</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-        {AllTask.map((task) => {
-          console.log(task)
-          return (
-            <tr key={task._id}>
-              <td>
-                <input type='checkbox'></input>
-              </td>
-              <td>
-                {task.description}
-              </td>
-              <td>
-                {task.completed}
-              </td>
-              <td>
-                {task.createdAt}
-              </td>
-              <td>
-                {task.updatedAt}
-              </td>
+        <table>
+          <thead className="headTable">
+            <tr>
+              <th>Check</th>
+              <th>Description</th>
+              <th>Completed</th>
+              <th>Created at</th>
+              <th>Update at</th>
+              <th>Actions</th>
             </tr>
-          )
-        })
-        }
-      
-      </tbody>
+          </thead>
+          <tbody>
+            {AllTask.map((task) => {
+              console.log(task)
+              return (
+                <tr key={task._id}>
+                  <td>
+                    <input type='checkbox'></input>
+                  </td>
+                  <td>
+                    {task.description}
+                  </td>
+                  <td>
+                    {task.completed}
+                  </td>
+                  <td>
+                    {task.createdAt}
+                  </td>
+                  <td>
+                    {task.updatedAt}
+                  </td>
+                  <td>
+                    <EditIcon />
+                  </td>
+                </tr>
+              )
+            })
+            }
+          </tbody>
       </table>
     </section>
   )
