@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAuthDispatch, logout, useAuthState } from '../../Context'
+import { useAuthDispatch, logout, useAuthState } from '../../ContextUser'
  
 function Dashboard(props) {
     const dispatch = useAuthDispatch() // read dispatch method from context
@@ -12,7 +12,7 @@ function Dashboard(props) {
         props.history.push('/login') //navigate to logout page on logout
     }
     return (
-        <div style={{ padding: 10 }}>
+        <section className='contentBasic'>
             <div >
                 <h1>
                     Dashboard
@@ -20,7 +20,7 @@ function Dashboard(props) {
                 <button onClick={handleLogout}>Logout</button>
             </div>
             <p>Welcome {userDetails.userDetails.email}</p>
-        </div>
+        </section>
     )
 }
  

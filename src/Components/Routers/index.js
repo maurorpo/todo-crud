@@ -1,9 +1,8 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
-import { useAuthState } from '../Context' //Importo estado de atentificacion
+import { useAuthState } from '../../ContextUser' //Importo estado de atentificacion
  
 const AppRoutes = ({ component: Component, path, isPrivate, ...rest }) => {
- 
     // Detalles del usuario
     const userDetails = useAuthState()
     return (

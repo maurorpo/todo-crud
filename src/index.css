@@ -1,13 +1,76 @@
 body {
+  background: rgb(91,69,238);
+  background: linear-gradient(90deg, rgba(91,69,238,1) 0%, rgba(140,43,172,1) 59%);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  font-family: Avenir LT Std;
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.contentBasic {
+  background: #ffffff73;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+}
+
+label {
+  font-size: 14px;
+}
+
+.contentBasicUser {
+  width: 400px;
+}
+
+.btnBasic {
+  background-color: rgba(91,69,238,1);
+  border: none;
+  display: inline-block;
+  color: #fff;
+  border-radius: 10px;
+  padding: 7px 30px 5px;
+  cursor: pointer;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.btnBasicAction {
+  background-color: rgba(140,43,172,1);
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 5px 30px 3px;
+  color: #fff;
+}
+
+.btnsContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contentBasic h1 {
+  text-transform: uppercase;
+  color: #333333;
+  margin: 0 0 40px;
+  font-size: 30px;
+  letter-spacing: 15px;
+  font-weight: 800;
+  text-align: center;
+}
+
+table {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+  width: 100%;
 }

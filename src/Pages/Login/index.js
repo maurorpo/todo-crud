@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { InputBasic, FromGroup } from '../../AppStyles';
-import { loginUser, useAuthState, useAuthDispatch } from '../../Context'
+import { loginUser, useAuthState, useAuthDispatch } from '../../ContextUser'
 
 const Login = (props) => {
 
@@ -22,7 +23,7 @@ const Login = (props) => {
   }
 
   return(
-    <section>
+    <section className='contentBasic contentBasicUser'>
       <h1>Login</h1>
       {
         errorMessage ? <p>{errorMessage}</p> : null
@@ -36,8 +37,10 @@ const Login = (props) => {
           <label htmlFor='password'>Password</label>
           <InputBasic type='password' value={password} onChange={(e) => setPassword(e.target.value)} id='password'/>
         </FromGroup>
-        <button onClick={Login}>Log in</button>
-        <button>Sing Up</button>
+        <div className='btnsContent'>
+          <button onClick={Login} className='btnBasic'>Log in</button>
+          <Link to='/singup' className='btnBasicAction'>Sing Up</Link>
+        </div>
       </form>
     </section>
   );

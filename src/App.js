@@ -4,23 +4,36 @@ import {
   Switch,
   Route,
   NavLink,
+  Link,
 } from "react-router-dom";
 import Routes from './Config/Routes'
-import { AuthProvider } from "./Context";
-import AppRoutes from './Components/index';
+import { AuthProvider } from "./ContextUser";
+import AppRoutes from './Components/Routers/index';
+import LinkNav from './Components/Nav/index'
 
+// Styles
+import './index.css'
 
 function App() {
   return (
     <section className="main">
       <AuthProvider>
-        <nav>
-          <ul>
-            
-          </ul>
-        </nav>
         {/* Routes */}
         <Router>
+          <nav>
+            <ul>
+              {Routes.map((routeLink) =>(
+                <li>
+                  <LinkNav
+                    key={routeLink.path}
+                    path={routeLink.path}
+                    isPrivate={routeLink.isPrivate}
+                    nameLink={routeLink.name}
+                  />
+                </li>
+              ))}
+            </ul>
+          </nav>
           <Switch>
             {Routes.map((route) => (
               <AppRoutes

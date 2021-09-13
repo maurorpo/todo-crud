@@ -1,6 +1,6 @@
 import React, { useState }from 'react'
 import { InputBasic, FromGroup } from '../../AppStyles';
-import { registerUser, useAuthDispatch } from '../../Context'
+import { registerUser, useAuthDispatch } from '../../ContextUser'
 
 
 const SingUp = (props) => {
@@ -28,7 +28,7 @@ const SingUp = (props) => {
 
 
   return(
-    <section>
+    <section className='contentBasic contentBasicUser'>
       <h1>Sing Up</h1>
       <form>
         <FromGroup>
@@ -47,7 +47,7 @@ const SingUp = (props) => {
           <label htmlFor='password'>Password</label>
           <InputBasic type='password' id='password' onChange={(e) => setPassword(e.target.value)}/>
         </FromGroup>
-        <button onClick={Register}>Sing Up</button>
+        <button className="btnBasic" onClick={Register}>Sing Up</button>
       </form>
     </section>
   );
