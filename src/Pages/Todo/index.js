@@ -5,7 +5,7 @@ import EditIcon from '@material-ui/icons/Edit';
 
 const Todo = () => {
 
-  GetTask()
+  GetTask() // este metodo no esta controlado en el ciclo de render del nodo, deberia estar en un efecto
   const listTasks = localStorage.getItem('allTask')
   const listJson = JSON.parse(listTasks)
   const arrayValue = Object.values(listJson);
