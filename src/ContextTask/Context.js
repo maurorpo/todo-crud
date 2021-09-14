@@ -7,7 +7,7 @@ const AuthDispatchContext = React.createContext(); // Envios del estado
 // Creacion de custom Hooks para pasar los estados entre componentes
 export function useAuthState() {
   const context = React.useContext(AuthStateContext);
-  if (context === undefined) {
+  if (context === undefined) { // esto sale en una linea y deberia ser solo if(context)
     throw new Error("useAuthState must be used within a AuthProvider");
   }
  
@@ -16,7 +16,7 @@ export function useAuthState() {
  
 export function useAuthDispatch() {
   const context = React.useContext(AuthDispatchContext);
-  if (context === undefined) {
+  if (context === undefined) { // lo mismo de arriba
     throw new Error("useAuthDispatch must be used within a AuthProvider");
   }
  
