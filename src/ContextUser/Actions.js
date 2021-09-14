@@ -1,7 +1,7 @@
-const LOGIN_URL     = 'https://api-nodejs-todolist.herokuapp.com/user/login';
+const LOGIN_URL     = 'https://api-nodejs-todolist.herokuapp.com/user/login'; // esta url base deberian estar en un namespace a parte para que sean usables en diferentes contextos
 const REGISTER_URL  = 'https://api-nodejs-todolist.herokuapp.com/user/register'
 
-// Defino headers
+// Defino headers ---> si el codigo es legible, no hay q comentarl
 const headers = new Headers();
 headers.append("Content-Type", "application/json");
 
@@ -19,9 +19,11 @@ export async function loginUser(dispatch, loginPayload) {
   // Ejecuta la accion dependiendo de las validaciones
   try {
     dispatch({ type: 'REQUEST_LOGIN' });
-    let response = await fetch(`${LOGIN_URL}`, requestOptions);
-    let data = await response.json();
- 
+    let response = await fetch(`${LOGIN_URL}`, requestOptions); // por que let ?
+    let data = await response.json(); // por que let?
+    //const { user } await response.json()
+    //if(user)
+    // sugiero hacer destructuring, queda mas legible
     if (data.user) {
       dispatch({ type: 'LOGIN_SUCCESS', payload: data });
       localStorage.setItem('currentUser', JSON.stringify(data));
@@ -30,7 +32,7 @@ export async function loginUser(dispatch, loginPayload) {
  
     dispatch({ type: 'LOGIN_ERROR', error: data.errors[0] });
     return;
-  } catch (error) {
+  } catch (error) { // esto puede ir en una linea
     dispatch({ type: 'LOGIN_ERROR', error: error });
   }
 }
@@ -64,7 +66,7 @@ export async function registerUser(dispatch, registerPayload) {
 }
  
 // Logut
-export async function logout(dispatch) {
+export async function logout(dispatch) { // el backend como sabe que el usuario ya no esta en sesion?? como muere el token ??
   dispatch({ type: 'LOGOUT' });
   localStorage.removeItem('currentUser');
   localStorage.removeItem('token');
